@@ -8,14 +8,40 @@ body {
   width: 100vw;
 }
 #root {
-  background-color: #fff;
+  background-color: #F5F7FB;
   max-width: 900px;
   margin: 0 auto;
   height: 100vh;
   border-radius: 8px;
   font-family: Karla;
+  background-image: url('./images/blob-top.png'), url('./images/blob-bottom.png');
+  background-position: right top, left bottom;
+  background-repeat: no-repeat, no-repeat;
+  padding: 15px;
 }
 .container {
-  padding-bottom: 10px;
-  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  text-align: center;
+}
+h1.title {
+  color: #293264;
+  font-size: 50px;
+  margin: 0 auto;
+  margin-top: 100%;
+}
+p.description {
+  color: #293264;
+}
+.start-quiz {
+  background-color: #4D5B9E;
+  color: #fff;
+  font-size: 20px;
+  padding: 20px 50px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
 }

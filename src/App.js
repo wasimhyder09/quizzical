@@ -1,9 +1,10 @@
-import logo from './logo.svg';
+import Start from './components/Start'
 import './App.css';
 
 function App() {
   return (
     <div className="container">
+      <Start />
     </div>
   );
 }
