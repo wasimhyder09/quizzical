@@ -1,3 +1,5 @@
+import {decode} from 'html-entities'
+
 export default function Question(props) {
   let options = []
   props.quiz.incorrect_answers.map(option => {
@@ -29,7 +31,7 @@ export default function Question(props) {
 
   return (
     <div className="questions">
-      <h2 className="question">{props.quiz.question}</h2>
+      <h2 className="question">{decode(props.quiz.question)}</h2>
       <div className="radio-buttons">
         {quizOptions}
       </div>
