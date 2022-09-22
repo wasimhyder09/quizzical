@@ -15,9 +15,23 @@ function App() {
     setHasQuestions(true)
   }
 
+  let id = 0
+  const answers = []
+  const quizQuestions = questions.map(question => {
+    answers[id] = question.correct_answer
+    id++
+    return (
+      <Question
+        key = {id}
+        quiz = {question}
+      />
+    )
+  })
+
+
   return (
     <div className="container">
-      {(hasQuestions ? <Question /> : <Start fetchQuestions={fetchQuestions} />)}
+      {(hasQuestions ? quizQuestions : <Start fetchQuestions={fetchQuestions} />)}
     </div>
   );
 }
