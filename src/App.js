@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="container">
       {(hasQuestions ? quizQuestions : <Start fetchQuestions={fetchQuestions} />)}
-      <button className="check-answers">Check answers</button>
+      {hasQuestions && <button className="check-answers">Check answers</button>}
     </div>
   );
 }

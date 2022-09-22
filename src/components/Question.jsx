@@ -24,7 +24,7 @@ export default function Question(props) {
   const quizOptions = options.map(option => {
     return(
       <div className="quiz-options">
-        <input type="radio" value={option} name={props.id} id={option} /><label htmlFor={option}>{option}</label>
+        <input type="radio" value={option} name={props.id} id={option} /><label htmlFor={option}>{decode(option)}</label>
       </div>
     )
   })
