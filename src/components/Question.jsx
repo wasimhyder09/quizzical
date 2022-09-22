@@ -5,6 +5,7 @@ export default function Question(props) {
   })
   options.push(props.quiz.correct_answer)
 
+
   function shuffle_array(array) {
     let currentIndex = array.length,  randomIndex;
     while (currentIndex != 0) {
@@ -16,20 +17,22 @@ export default function Question(props) {
     return array;
   }
 
-  let id = 0
+  shuffle_array(options)
+
   const quizOptions = options.map(option => {
     return(
       <div className="quiz-options">
-        <input type="radio" value={option} name={id} /> {option}
+        <input type="radio" value={option} name={props.id} id={option} /><label htmlFor={option}>{option}</label>
       </div>
     )
-    id++
   })
 
   return (
     <div className="questions">
       <h2 className="question">{props.quiz.question}</h2>
-      {quizOptions}
+      <div className="radio-buttons">
+        {quizOptions}
+      </div>
     </div>
   )
 }

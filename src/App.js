@@ -24,6 +24,7 @@ function App() {
       <Question
         key = {id}
         quiz = {question}
+        id = {id - 1}
       />
     )
   })
@@ -32,6 +33,7 @@ function App() {
   return (
     <div className="container">
       {(hasQuestions ? quizQuestions : <Start fetchQuestions={fetchQuestions} />)}
+      <button className="check-answers">Check answers</button>
     </div>
   );
 }

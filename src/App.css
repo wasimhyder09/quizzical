@@ -45,3 +45,47 @@ p.description {
   border-radius: 15px;
   cursor: pointer;
 }
+h2.question {
+  color: #293264;
+  font-size: 22px;
+  text-align: left;
+  padding: 0px 70px;
+}
+.radio-buttons {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 0 20px;
+}
+.questions {
+  padding: 20px 0px;
+  border-bottom: 1px solid #DBDEF0;
+  width: 90%;
+}
+input[type=radio] {
+  position: absolute;
+  visibility: hidden;
+  display: none;
+}
+label {
+  color: #4D5B9E;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 5px 20px;
+  border: 1px solid #4D5B9E;
+  border-radius: 10px;
+}
+.quiz-options input[type=radio]:checked + label {
+  background-color: #D6DBF5;
+  color: #293264;
+}
+.check-answers {
+  background-color: #4D5B9E;
+  margin: 15px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  width: 200px;
+  height: 55px;
+  color: #F5F7FB;
+}
