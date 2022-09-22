@@ -8,7 +8,7 @@ function App() {
   const [hasQuestions, setHasQuestions] = useState(false)
 
   const fetchQuestions = async() => {
-    const url = 'https://opentdb.com/api.php?amount=5&difficulty=easy&type=multiple'
+    const url = 'https://opentdb.com/api.php?amount=5&difficulty=easy&type=multiple&category=11'
     const res = await fetch(url)
     const result = await res.json()
     setQuestions(result.results)
@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div className="container">
-      {(hasQuestions ? <Question /> : <Start fetchQuestions={fetchQuestions} hasQuestions={hasQuestions}  />)}
+      {(hasQuestions ? <Question /> : <Start fetchQuestions={fetchQuestions} />)}
     </div>
   );
 }
