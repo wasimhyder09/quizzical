@@ -103,3 +103,7 @@ label {
 .final-results span {
   font-size: 35px;
 }
+h1.title.loading {
+  margin-top: 200%;
+  font-size: 40px;
+}

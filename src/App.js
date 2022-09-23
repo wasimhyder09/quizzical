@@ -1,18 +1,22 @@
 import {useState, useEffect} from 'react'
 import Start from './components/Start'
+import Loading from './components/Loading'
 import Question from './components/Question'
 import './App.css';
 
 function App() {
   const[questions, setQuestions] = useState([])
   const [hasQuestions, setHasQuestions] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const fetchQuestions = async() => {
+    setLoading(true)
     const url = 'https://opentdb.com/api.php?amount=5&difficulty=easy&type=multiple&category=11'
     const res = await fetch(url)
     const result = await res.json()
     setQuestions(result.results)
     setHasQuestions(true)
+    setLoading(false)
   }
 
   let id = 0
@@ -54,7 +58,7 @@ function App() {
 
   return (
     <div className="container">
-      {(hasQuestions ? quizQuestions : <Start fetchQuestions={fetchQuestions} />)}
+      {(hasQuestions ? quizQuestions : loading ? <Loading /> : <Start fetchQuestions={fetchQuestions} />)}
     </div>
   );
 }
