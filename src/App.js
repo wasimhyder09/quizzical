@@ -11,7 +11,7 @@ function App() {
 
   const fetchQuestions = async() => {
     setLoading(true)
-    const url = 'https://opentdb.com/api.php?amount=5&difficulty=easy&type=multiple&category=11'
+    const url = 'https://opentdb.com/api.php?amount=5&difficulty=easy&type=multiple'
     const res = await fetch(url)
     const result = await res.json()
     setQuestions(result.results)
