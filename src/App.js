@@ -29,7 +29,6 @@ function App() {
     )
   })
 
-
   return (
     <div className="container">
       {(hasQuestions ? quizQuestions : <Start fetchQuestions={fetchQuestions} />)}
