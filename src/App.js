@@ -44,14 +44,17 @@ function App() {
     return array;
   }
 
-  const params = [questionText, options]
+  function retakeQuiz() {
+    setHasQuestions(false)
+  }
 
-  const quizQuestions = <Question quizes = {params} />
+  const params = [questionText, options, answers]
+
+  const quizQuestions = <Question quizes = {params} retakeQuiz={retakeQuiz} />
 
   return (
     <div className="container">
       {(hasQuestions ? quizQuestions : <Start fetchQuestions={fetchQuestions} />)}
-      {hasQuestions && <div class="results"><button className="check-answers">Check answers</button></div>}
     </div>
   );
 }

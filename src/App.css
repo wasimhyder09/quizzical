@@ -94,4 +94,12 @@ label {
   width: 200px;
   color: #F5F7FB;
   padding: 15px;
+  cursor: pointer;
+}
+.final-results {
+  color: #293264;
+  font-size: 25px;
+}
+.final-results span {
+  font-size: 35px;
 }
