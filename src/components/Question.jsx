@@ -10,7 +10,7 @@ export default function Question(props) {
     const {name, value} = event.target
     setQuizAnswers(prevAnswer =>({
       ...prevAnswer,
-      [event.target.name]: event.target.value
+      [name]: value
     }))
   }
 
@@ -24,6 +24,9 @@ export default function Question(props) {
           <input
             type="radio"
             name={count-1}
+            className=
+              {`${(calcResult && (props.quizes[1][count-1][0] == quizAnswers[count-1]) && (props.quizes[1][count-1][0] != props.quizes[2][count-1]) ? "wrong-answer" : "")}
+              ${(calcResult && (props.quizes[1][count-1][0] == props.quizes[2][count-1]) ? "correct-answer" : "")}`}
             value={props.quizes[1][count-1][0]}
             id={props.quizes[1][count-1][0]}
             onChange={handleChange}
@@ -31,6 +34,9 @@ export default function Question(props) {
           <input
             type="radio"
             name={count-1}
+            className=
+              {`${(calcResult && (props.quizes[1][count-1][1] == quizAnswers[count-1]) && (props.quizes[1][count-1][1] != props.quizes[2][count-1]) ? "wrong-answer" : "")}
+              ${(calcResult && (props.quizes[1][count-1][1] == props.quizes[2][count-1]) ? "correct-answer" : "")}`}
             value={props.quizes[1][count-1][1]}
             id={props.quizes[1][count-1][1]}
             onChange={handleChange}
@@ -38,6 +44,9 @@ export default function Question(props) {
           <input
             type="radio"
             name={count-1}
+            className=
+              {`${(calcResult && (props.quizes[1][count-1][2] == quizAnswers[count-1]) && (props.quizes[1][count-1][2] != props.quizes[2][count-1]) ? "wrong-answer" : "")}
+              ${(calcResult && (props.quizes[1][count-1][2] == props.quizes[2][count-1]) ? "correct-answer" : "")}`}
             value={props.quizes[1][count-1][2]}
             id={props.quizes[1][count-1][2]}
             onChange={handleChange}
@@ -45,6 +54,9 @@ export default function Question(props) {
           <input
             type="radio"
             name={count-1}
+            className=
+              {`${(calcResult && (props.quizes[1][count-1][3] == quizAnswers[count-1]) && (props.quizes[1][count-1][3] != props.quizes[2][count-1]) ? "wrong-answer" : "")}
+              ${(calcResult && (props.quizes[1][count-1][3] == props.quizes[2][count-1]) ? "correct-answer" : "")}`}
             value={props.quizes[1][count-1][3]}
             id={props.quizes[1][count-1][3]}
             onChange={handleChange}
@@ -73,7 +85,7 @@ export default function Question(props) {
         {quizOptions}
       </div>
       {!calcResult && <div className="results"><button className="check-answers" onClick={calculateResult}>Check answers</button></div>}
-      {calcResult && <div className="final-results">Your score is <span className="score">{marks}/{props.quizes[2].length}</span>. <button className="check-answers" onClick={props.retakeQuiz}>Retake quiz</button></div>}
+      {calcResult && <div className="final-results">Your score is <span className="score">{marks}/{props.quizes[2].length}</span>. <button className="check-answers" onClick={() => props.retakeQuiz()}>Play again</button></div>}
     </div>
   )
 }

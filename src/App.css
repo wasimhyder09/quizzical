@@ -81,7 +81,7 @@ label {
   border-radius: 10px;
   margin: 0 10px;
 }
-.quiz-options input[type=radio]:checked + label {
+input[type=radio]:checked + label {
   background-color: #D6DBF5;
   color: #293264;
 }
@@ -106,4 +106,16 @@ label {
 h1.title.loading {
   margin-top: 200%;
   font-size: 40px;
+}
+.correct-answer:not(.wrong-answer)+label {
+  background-color: #94D7A2;
+}
+.wrong-answer:not(.correct-answer)+label {
+  background-color: #F8BCBC;
+}
+.correct-answer+label {
+  background-color: #94D7A2 !important;
+}
+.wrong-answer+label {
+  background-color: #F8BCBC !important;
 }

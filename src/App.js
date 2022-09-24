@@ -25,12 +25,19 @@ function App() {
   let questionText = []
   let text = ''
   let options = []
+  let incorrect_answers = []
+  let correct_answer = ''
 
   questions.map(question => {
-    answers[id] = question.correct_answer
+    incorrect_answers = question.incorrect_answers
+    correct_answer = question.correct_answer.replace(/,/g, '')
+    answers[id] = correct_answer
     questionText[id] = question.question
+    for(var i=0; i < incorrect_answers.length; i++) {
+     incorrect_answers[i] = incorrect_answers[i].replace(/,/g, '')
+    }
     text = question.incorrect_answers.toString();
-    text = text+','+question.correct_answer
+    text = text+','+correct_answer
     optionVals = text.split(',')
     shuffle_array(optionVals)
     options[id] = optionVals
